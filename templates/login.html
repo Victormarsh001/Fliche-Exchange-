@@ -1,0 +1,65 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset='utf-8'/>
+    <meta name='viewport' content="width=device-width initial-scale=1"/>
+    <title>Sign Up</title>
+    <style>
+      input{
+        border-radius: 18px;
+        padding: 21px 30px;
+        font-family: Times New Roman;
+        margin-bottom: 50px;
+        border-color: #663399;
+        font-size: 17px;
+
+
+      }
+      h3{
+        color: #663399;
+        font-size: 37px;
+      }
+      input:focus{
+        outline: 80%;
+        border-color: #663399;
+      }
+      button{
+        cursor: pointer;
+        border-radius: 12px;
+        background-color: #663399;
+        padding: 8px;
+        border: 2px solid #663399;
+        padding: 10px 30px;
+        font-size: 22px;
+        color: white;
+        font-weight: bold;
+      }
+    </style>
+</head>
+
+<body style="display: flex; align-items: center; justify-content: center; height: 95vh; background-color: #663399;">
+
+    <div style="display: flex; align-items: center; justify-content: center; margin: 0 0 0 1px; width: 300px; border-radius: 15px; padding: 10px 30px; box-shadow: 0 5px 10px rgba(0,0,0,0.3);  background-color: #faf9f6;">
+
+
+
+      <form action='/signupform' method='post'>
+        <h3> Login </h3>
+        <input style="margin-bottom: 50px;" type='email' name='signupEmail' placeholder="Email Address"/>
+        <input style="margin-bottom: 20px;" type='password' name='signupPassword' placeholder="Password"/>
+        <div>
+          <button style="margin: 3% 0 0 25%; display: flex; align-items: center; justify-content: center;"> Login </button>
+        </div>
+        <div>
+          <p style="margin: 9% 0 0 19%; color: #663399; font-weight: bold; font-size: 18px;"> I'm new here. <a style="font-size: 21px; text-decoration: none;" href="#">Sign up</a></p>
+        </div>
+      </form>
+
+    </div>
+
+</body>
+
+</html>
