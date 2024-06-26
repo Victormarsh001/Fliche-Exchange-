@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+
 app = Flask(__name__)
 
 tokens = [
@@ -41,6 +42,14 @@ tokens = [
 @app.route('/')
 def hello_world():
   return render_template('trade.html', coin=tokens)
+
+@app.route('/trade')
+def trade():
+  token = request.args.get('item')
+  logo = request.args.get('img')
+  
+  return render_template('trad.html', item=token, img=logo)
+  
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", debug=True)
