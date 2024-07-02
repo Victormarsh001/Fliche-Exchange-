@@ -1,6 +1,38 @@
+import random
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
+rev = ["Ava @ Japan: Great app for crypto trading",
+"Liam @ France: Easy to use, love the features",
+"Noah @ Brazil: Awesome for beginners",
+"Eva @ Germany: Great for cryptocurrency exchange",
+"Lucas @ Australia: Excellent performance",
+"Mia @ Italy: So easy to navigate",
+"Oliver @ Spain: Fantastic for trading",
+"Charlotte @ China: Love the updates",
+"William @ India: Best app for crypto",
+"Amelia @ Russia: Great support team",
+"George @ South Africa: Super fast transactions",
+"Harriet @ South Korea: Amazing features",
+"Benjamin @ Mexico: So intuitive",
+"Alice @ Turkey: Love the UI",
+"Henry @ Poland: Excellent app",
+"Eleanor @ Indonesia: Great job",
+"Alexander @ Netherlands: Super impressed",
+"Sophia @ Switzerland: Fantastic",
+"Elijah @ Sweden: Love it",
+"Emily @ Greece: Great app",
+"James @ Belgium: Super useful",
+"Abigail @ Austria: Excellent",
+"Gabriel @ Romania: Awesome",
+"Julia @ Portugal: Love the features",
+"Michael @ Czech Republic: Great performance",
+"Hannah @ Hungary: Fantastic app",
+"Daniel @ Norway: Super impressed",
+"Isabella @ Denmark: Love the design",
+"Logan @ Finland: Excellent support",
+"Sophie @ New Zealand: Great job"]
+
 
 tokens = [
   {'logo': '/static/avax.jpeg', 'name':'AvaCoin'},
@@ -41,7 +73,8 @@ tokens = [
 
 @app.route('/')
 def hello_world():
-  return render_template('trade.html', coin=tokens)
+  revs = [i for i in random.sample(rev, 10)]
+  return render_template('support.html', revs=revs, coin=tokens)
 
 @app.route('/trade')
 def trade():

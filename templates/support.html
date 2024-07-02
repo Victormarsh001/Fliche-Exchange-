@@ -11,7 +11,11 @@
           color: #faf9f6;
           font-family: 'Arial Rounded MT bold' Arial;
           font-style: bold;
+           margin-top: 25px;
         }
+         a{
+            text-decoation: none;
+         }
         
       </style>
    </head>
@@ -19,17 +23,35 @@
       <h2>Customer Support</h2>
      
       <div display: flex; align-items: center; justify-content: center; margin-left: 70px;>
-         <form action='/complain' method="post">
-           <textarea style="padding: 17px; border: 4px solid #663399; border-radius: 7px; font-family: Times New Roman; font-size: 15px;" placeholder="Enter your complaints/questions here" rows="17" cols="34" name="complaint""></textarea>
-           <button style="margin: 2% 0 0 200px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #663399; color: #faf9f6; border-radius: 10px; background-color: #663399; padding: 10px 20px; font-size: 20px;"> Submit </button>
+         <form method="post">
+           <textarea style="padding: 14px; border: 4px solid #663399; border-radius: 7px; font-family: Times New Roman; font-size: 13px;" placeholder="Enter your complaints/questions here and attach your email address at the end" rows="17" cols="32" name="complaint""></textarea>
+           <button style="margin: 2% 0 0 200px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #663399; color: #faf9f6; border-radius: 10px; background-color: #663399; padding: 8px 16px; font-size: 18px;">Submit</button>
          </form>
       </div>
+      <div style="font-family: 'Arial Rounded MT bold' Arial; margin-top: 30px; margin-left: 5px; font-size: 14px; color: white; font-weight: bolder;">
+   
+      <p> Suggestions can be made here <a style="color: #663399; text-decoration: none;" href="mailto:flicheexchange@gmail.com?subject=Suggestion%20for%20Fliche%20Exchange&body=%3CType%20your%20suggestions%20here%3E"><b>suggestion@fliche</b></a>
+      </p>
+         
+      </div>
+      
       <div style="width: 95%; margin-left: 1px; margin-top: 20px; border: 2px solid white; border-radius: 6px;">
       </div>
 
       <h2>Reviews</h2>
      
-      <div>
+      <div style="margin-bottom: 15px; margin-top: 20px; font-family: 'Arial Rounded MT bold' Arial">
+         {% for i in revs %}
+         <div style="width: 95%; margin-left: 3px; margin-top: 1px;">
+            <p style="color: white; font-size: 16px; font-weight: bolder; border-bottom: 2px solid white; border-radius: 6px; padding: -1px;"> {{ i }} </p>
+            
+         </div>
+         {% endfor %}
+         <div style="font-family: 'Arial Rounded MT bold' Arial; margin-top: 30px; margin-left: 5px; font-size: 19px; color: white; font-weight: bolder;">
+            <p> Write a review <a style="color: #663399; text-decoration: none;" href="mailto:flicheexchange@gmail.com?subject=Review%20for%20Fliche%20Exchange&body=%3CType%20your%20review%20here%3E"><b>review@fliche</b></a>
+            </p>
+         </div>
+         
       </div>
 
          
