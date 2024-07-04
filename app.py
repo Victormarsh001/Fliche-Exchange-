@@ -74,7 +74,11 @@ tokens = [
 @app.route('/')
 def hello_world():
   revs = [i for i in random.sample(rev, 10)]
-  return render_template('support.html', revs=revs, coin=tokens)
+  
+  
+  value = request.args.get('amount')
+  
+  return render_template('profile.html', revs=revs, coin=tokens, value=value)
 
 @app.route('/trade')
 def trade():
