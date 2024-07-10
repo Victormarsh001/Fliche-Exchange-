@@ -70,22 +70,61 @@ tokens = [
   {'logo': '/static/zec.jpeg', 'name':'Zecoin'},
   
 ]
+item = ''
+img = ''
 
 @app.route('/')
 def hello_world():
-  revs = [i for i in random.sample(rev, 10)]
-  
-  
   value = request.args.get('amount')
   
-  return render_template('profile.html', revs=revs, coin=tokens, value=value)
+  return render_template('profile.html', value=value)
 
+@app.route('/login')
+def login():
+  email = request.args.get('email')
+  password = request.args.get('password')
+  return render_template('login.html')
+
+@app.route('/signup')
+def signup():
+  email = request.args.get('email')
+  name = request.args.get('name')
+  country = request.args.get('country')
+  password = request.args.get('password')
+  
+  return render_template('signup.html')
+
+@app.route('/profile')
+def profile():
+  return render_template('profile.html')
+  
 @app.route('/trade')
 def trade():
-  token = request.args.get('item')
-  logo = request.args.get('img')
   
-  return render_template('trad.html', item=token, img=logo)
+  return render_template('trade.html')
+
+@app.route('/trad')
+def trad():
+    item = request.args.get('item')
+    img = request.args.get('img')
+    return render_template('trad.html', item=item, img=img)
+  
+@app.route('/trade/sell')
+def sell():
+  return render_template('payment.html')
+  
+@app.route('/trade/swap')
+def swap():
+  return render_template('swap.html')
+
+@app.route('/support')
+def support():
+  return render_template('support.html')
+
+@app.route('/about')
+def about():
+  revs = [i for i in random.sample(rev, 10)]
+  return render_template('about.html', revs=revs)
   
 
 if __name__ == "__main__":

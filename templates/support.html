@@ -16,6 +16,74 @@
          a{
             text-decoation: none;
          }
+        .button-container {
+      background-color: white;
+       border-radius: 9px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+      position: absolute;
+      margin-top: 15px;
+      margin-bottom: 13px;
+       right: 0;
+       left: 0;
+    }
+
+    .circular-button {
+      background-color: white;
+    
+      border: 2px solid #9370db;
+      color: #fff;
+      
+      cursor: pointer;
+      border-radius: 15px;
+      width: 60px;
+      height: 60px;
+      margin: 0 10px;
+      display: inline-block;
+    }
+
+    .circular-button:hover {
+      background-color: white;
+    }
+    .home-icon {
+        background-color: white;
+        color: #9370db;
+      font-size: 34px;
+      text-decoration: none;
+    }
+    .home-icon::before {
+        content: "\2302"; /* Unicode character for home icon */
+      }
+    .support-icon {
+      background-color: white;
+      color: #9370db;
+        font-size: 34px;
+      text-decoration: none;
+    }
+    .support-icon::before {
+        color: #9370db;
+        content: "\2296"; /* Unicode character for phone icon */
+    }
+    .about-icon {
+  background-color: white;
+  color: #9370db;
+  font-size: 34px;
+      text-decoration: none;
+    }
+    .about-icon::before {
+        content: "\2807"; /* Unicode character for info icon */
+    }
+    .trade-icon {
+  background-color: white;
+  color: #9370db;
+  font-size: 34px;
+      text-decoration: none;
+    }
+    .trade-icon::before {
+        content: "\21C6"; /* Unicode character for exchange icon */
+         }
+                 
         
       </style>
    </head>
@@ -53,6 +121,15 @@
          </div>
          
       </div>
+      <div class="button-container">
+         <button class="circular-button"><a class="home-icon" href="/profile"></a></button>
+
+         <button class="circular-button"><a class="trade-icon" href="/trade"></a></button>
+
+         <button class="circular-button"><a class="support-icon" href="/support"></a></button>
+
+         <button class="circular-button"><a class="about-icon" href="/about"></a></button>
+       </div>
 
          
       
